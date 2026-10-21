@@ -1,0 +1,12 @@
+<% content_for :title, "Editing caliber" %>
+
+<h1>Editing caliber</h1>
+
+<%= render "form", caliber: @caliber %>
+
+<br>
+
+<div>
+  <%= link_to "Show this caliber", @caliber %> |
+  <%= link_to "Back to calibers", calibers_path %>
+</div>

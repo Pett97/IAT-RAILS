@@ -1,0 +1,49 @@
+<%= form_with(model: weapon) do |form| %>
+  <% if weapon.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(weapon.errors.count, "error") %> erro(s) ao salvar/atualizar arma:</h2>
+
+      <ul>
+        <% weapon.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :serie_number,"Numero de Serie", style: "display: block" %>
+    <%= form.text_field :serie_number %>
+  </div>
+
+  <div>
+    <%= form.label :model,"Modelo", style: "display: block" %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div>
+    <%= form.label :caliber_id, "Calibre", style: "display: block" %>
+    <%= form.select :caliber_id, options_from_collection_for_select(@calibers, :id, :name, form.object.caliber_id), { prompt: "Selecione o calibre" } %>
+  </div>
+
+  <div>
+    <%= form.label :brand_id, "Marca", style: "display: block" %>
+    <%= form.select :brand_id, options_from_collection_for_select(@brands, :id, :name, form.object.brand_id), { prompt: "Selecione a marca da arma" } %>
+  </div>
+
+  <div>
+    <%= form.label :active,"Status" ,style: "display: block" %>
+    <%= form.checkbox :active %>
+  </div>
+
+  <div>
+    <%= form.label :system_register,"Sistema de registro", style: "display: block" %>
+    <%= form.select :system_register,
+        SystemRegisterOptions::EXTENDED_SYSTEMSREGISTERS.map{|key,value| [value.titleize, value]},
+        {prompt: "Selecione o Local de registro..."}%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

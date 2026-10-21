@@ -1,0 +1,10 @@
+
+  <td><%= weapon.id%></td>
+  <td><%= weapon.serie_number%></td>
+  <td><%= weapon.caliber&.name || "N/A"%></td>
+  <td><%= weapon.brand&.name || "N/A"%></td>
+  <td>
+  <%= SystemRegisterOptions::EXTENDED_SYSTEMSREGISTERS[weapon.system_register&.to_sym] || "Não definido" %></td>
+  <td><%= weapon.active ? "Ativa": "Desativada"%></td>
+
+

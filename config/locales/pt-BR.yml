@@ -1,0 +1,30 @@
+pt-BR:
+  activerecord:
+    attributes:
+      weapon:
+        system_register: "Local de registro"
+        caliber: "Calibre"
+        brand: "Marca"
+        model: "Modelo"
+        serie_number: "Número de série"
+    errors:
+      models:
+        weapon:
+          attributes:
+            caliber:
+              required: "deve ser selecionado"
+            brand:
+              required: "deve ser selecionada"
+              blank: "deve ser selecionada"
+            system_register:
+              blank: "deve ser selecionado"
+            model:
+              blank: "deve ser preenchido"
+            serie_number:
+              blank: "deve ser preenchido"
+              taken: "já foi cadastrada no sistema"
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      required: "deve ser selecionado"
+      blank: "não pode ficar em branco"

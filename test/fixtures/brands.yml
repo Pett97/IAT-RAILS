@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: apex
+  active: false
+  hash_name: APEX
+  country: BRASIL
+
+two:
+  name: cbc
+  active: false
+  hash_name: CBC
+  country: EUA

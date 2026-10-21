@@ -1,0 +1,15 @@
+one:
+  serie_number: MyString1
+  model: MyString1
+  caliber: 9mm
+  brand: apex
+  active: false
+  system_register: SIGMA
+
+two:
+  serie_number: MyString2
+  model: MyString2
+  caliber: 12ga
+  brand: cbc
+  active: true
+  system_register: SIGMA EB

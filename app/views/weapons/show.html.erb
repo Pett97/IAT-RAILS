@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<table>
+  <thead>
+    <th>#</th>
+    <th>Numero Serie</th>
+    <th>Calibre</th>
+    <th>Marca</th>
+    <th>Sistema Registro</th>
+    <th>Status</th>
+  </thead>
+  <tbody>
+    <%= render @weapon %>
+  </tbody>
+</table>
+
+<div>
+  <%= link_to "Editar", edit_weapon_path(@weapon) %> |
+  <%= link_to "Voltar", weapons_path %>
+
+  <%= button_to "Deletar essa arma", @weapon, method: :delete, data: { turbo_confirm: "Você tem Certeza?" } %>
+</div>
+

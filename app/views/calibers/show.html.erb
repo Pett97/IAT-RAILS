@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @caliber %>
+
+<div>
+  <%= link_to "Edit this caliber", edit_caliber_path(@caliber) %> |
+  <%= link_to "Back to calibers", calibers_path %>
+
+  <%= button_to "Destroy this caliber", @caliber, method: :delete %>
+</div>

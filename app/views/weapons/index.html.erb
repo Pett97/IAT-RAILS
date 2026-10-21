@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Weapons" %>
+
+<h1>Armas</h1>
+<table>
+  <thead>
+    <th>#</th>
+    <th>Numero Serie</th>
+    <th>Calibre</th>
+    <th>Marca</th>
+    <th>Sistema Registro</th>
+    <th>Status</th>
+    <th>Ações</th>
+  </thead>
+  <tbody>
+<div id="weapons">
+  <% @weapons.each do |weapon| %>
+  <tr>
+    <%= render weapon %>
+    <td> <%= link_to "Visualizar", weapon_path(weapon.id) %></td>
+  <% end %>
+  </tr>
+</div>
+  </tbody>
+</table>
+
+
+<%= link_to "New weapon", new_weapon_path %>
