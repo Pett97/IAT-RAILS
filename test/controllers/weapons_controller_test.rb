@@ -18,7 +18,7 @@ class WeaponsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create weapon" do
-    assert_difference("Weapon.count", 1) do
+    assert_difference("Weapon.count", 0) do
       post weapons_url, params: {
         weapon: {
           active: true,

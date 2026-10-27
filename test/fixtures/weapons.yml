@@ -5,6 +5,10 @@ one:
   brand: apex
   active: false
   system_register: SIGMA
+  weapon_type: "PISTOLA"
+  bore: "RAIADA"
+  bore_direction: "ESQUERDA"
+  number_craf: "2026teste"
 
 two:
   serie_number: MyString2
@@ -13,3 +17,6 @@ two:
   brand: cbc
   active: true
   system_register: SIGMA EB
+  weapon_type: "ESPINGARDA"
+  bore: "LISA"
+  number_craf: "peterson"

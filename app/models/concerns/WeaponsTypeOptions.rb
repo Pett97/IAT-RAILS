@@ -1,0 +1,6 @@
+module WeaponsTypeOptions
+  EXTENDED_WEAPONS_TYPE_OPTIONS = {
+    PISTOLA: "PISTOLA",
+    ESPINGARDA: "ESPINGARDA"
+  }
+end
