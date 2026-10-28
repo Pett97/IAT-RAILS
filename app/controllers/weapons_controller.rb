@@ -28,7 +28,7 @@ class WeaponsController < ApplicationController
 
     respond_to do |format|
       if @weapon.persisted?
-        format.html { redirect_to @weapon, notice: "Weapon was successfully created." }
+        format.html { redirect_to @weapon, notice: "Arma criada com sucesso." }
         format.json { render :show, status: :created, location: @weapon }
       else
         format.html { render :new, status: :unprocessable_content }

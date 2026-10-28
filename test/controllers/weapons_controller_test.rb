@@ -18,18 +18,23 @@ class WeaponsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create weapon" do
-    assert_difference("Weapon.count", 0) do
+    assert_difference("Weapon.count", 1) do
       post weapons_url, params: {
         weapon: {
-          active: true,
-          brand_id: @brand.id,
+          serie_number: "testecriararma",
+          model: "Modelotstes",
           caliber_id: @caliber.id,
-          model: "Modelo de teste",
-          serie_number: "TESTE-CREATE-001",
-          system_register: "sigma"
+          brand_id: @brand.id,
+          active: true,
+          system_register: "sigma",
+          bore: "LISA",
+          number_craf: "91241506",
+          weapon_type: "ESPINGARDA"
         }
       }
     end
+
+    # puts assigns(:weapon).errors.full_messages
 
     assert_redirected_to weapon_url(Weapon.last)
   end
