@@ -2,7 +2,6 @@
   <% if weapon.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(weapon.errors.count, "error") %> erro(s) ao salvar/atualizar arma:</h2>
-
       <ul>
         <% weapon.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,63 +9,51 @@
       </ul>
     </div>
   <% end %>
-
   <div>
     <%= form.label :serie_number,"Numero de Serie", style: "display: block" %>
     <%= form.text_field :serie_number %>
   </div>
-
   <div>
     <%= form.label :model,"Modelo", style: "display: block" %>
     <%= form.text_field :model %>
   </div>
-
   <div>
     <%= form.label :caliber_id, "Calibre", style: "display: block" %>
     <%= form.select :caliber_id, options_from_collection_for_select(@calibers, :id, :name, form.object.caliber_id), { prompt: "Selecione o calibre" } %>
   </div>
-
   <div>
     <%= form.label :brand_id, "Marca", style: "display: block" %>
     <%= form.select :brand_id, options_from_collection_for_select(@brands, :id, :name, form.object.brand_id), { prompt: "Selecione a marca da arma" } %>
   </div>
-
   <div>
     <%= form.label :active,"Status" ,style: "display: block" %>
     <%= form.checkbox :active %>
   </div>
-
- <div>
+  <div>
     <%= form.label :system_register, "Sistema de registro", style: "display: block" %>
     <%= form.select :system_register, @system_registers, { prompt: "Selecione o Local de registro..." } %>
- </div>
-
- <div>
+  </div>
+  <div>
     <%= form.label :number_craf,"Numero de Registro", style: "display: block" %>
     <%= form.text_field :number_craf %>
   </div>
-
   <div>
     <%= form.label :weapon_type,"Tipo Armamento", style: "display: block" %>
     <%= form.select :weapon_type,@weapon_type_options, {prompt: "Selecione o tipo do armamento"} %>
   </div>
-
   <div>
     <%= form.label :bore, "Tipo Alma", style: "display: block" %>
     <%= form.select :bore, @bore_options, 
           { prompt: "Selecione o tipo de alma" }, 
           { data: { weapon_form_target: "bore", action: "change->weapon-form#toggleDirection" } } %>
   </div>
-
- 
   <div
   data-weapon-form-target="directionContainer"
   style="display: none;">
-  <%= form.label :bore_direction,
+    <%= form.label :bore_direction,
         "Direção da Raia",
         style: "display: block" %>
-
-  <%= form.select :bore_direction,
+    <%= form.select :bore_direction,
         @bore_direction_options,
         { prompt: "Selecione a direção..." },
         {
@@ -74,8 +61,7 @@
             weapon_form_target: "direction"
           }
         } %>
-</div>
-
+  </div>
   <div>
     <%= form.submit %>
   </div>
