@@ -12,15 +12,35 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+```
+rails db:create
+```
 
 * Database initialization
+```
+rails db:migrate
+```
 
 * How to run the test suite
+```
+rails test
+```
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+# Dev
 
+* verificar se tem alguma gem com alguma vunerabilidade encontrada
+```
+bundle exec bundler-audit update
+```
+```
+bundle exec bundler-audit 
+```
+* verificar codigo
+```
+bundle exec rubocop -A
+``` 
 * ...
 # iat-rails
 # iat-rails
