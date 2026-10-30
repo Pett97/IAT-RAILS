@@ -8,7 +8,12 @@ class WeaponTest < ActiveSupport::TestCase
       caliber: calibers(:one),
       brand: brands(:one),
       active: true,
-      system_register: :sigma
+      system_register: :sigma,
+      weapon_type: "PISTOLA",
+      bore: "RAIADA",
+      bore_direction: "ESQUERDA",
+      number_craf: "peterson13213"
+
     )
 
     assert weapon.save

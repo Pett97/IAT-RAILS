@@ -1,6 +1,6 @@
 class WeaponsController < ApplicationController
   before_action :set_weapon, only: %i[ show edit update destroy ]
-  before_action :system_register_options, only: %i[show new create edit update ]
+  before_action :load_form_options, only: %i[show new create edit update ]
   before_action :set_calibers, only: %i[show new create edit update index ]
   before_action :set_brands, only: %i[show new create edit update index ]
 
@@ -28,7 +28,7 @@ class WeaponsController < ApplicationController
 
     respond_to do |format|
       if @weapon.persisted?
-        format.html { redirect_to @weapon, notice: "Weapon was successfully created." }
+        format.html { redirect_to @weapon, notice: "Arma criada com sucesso." }
         format.json { render :show, status: :created, location: @weapon }
       else
         format.html { render :new, status: :unprocessable_content }
@@ -69,11 +69,17 @@ class WeaponsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def weapon_params
-      params.expect(weapon: [ :serie_number, :model, :caliber_id, :brand_id, :active, :system_register ])
+      params.expect(weapon: [ :serie_number, :model, :caliber_id, :brand_id, :active, :system_register, :bore_direction, :bore, :number_craf, :weapon_type ])
     end
 
-    def system_register_options
+    def load_form_options
       @system_registers = Weapons::WeaponService.system_register_options
+
+      @bore_options = BoreOptions::EXTENDED_BORE_OPTIONS
+
+      @bore_direction_options = BoreDirectionOptions::EXTENDED_BORE_DIRECTION_OPTIONS
+
+      @weapon_type_options = WeaponsTypeOptions::EXTENDED_WEAPONS_TYPE_OPTIONS
     end
 
     def set_calibers
